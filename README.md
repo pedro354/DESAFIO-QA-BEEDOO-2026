@@ -120,6 +120,56 @@ Esse comportamento pode gerar confusão ao usuário, pois aparenta que o curso n
 
 ---
 
+##Bug 3 — Data final menor que data inicial
+
+### Passos para reproduzir
+
+1. Ir em Cadastrar Curso
+2. Colocar:
+Data de início: 10/12/2030
+Data de fim: 01/01/2025
+3. Preencher o resto
+4. Cadastrar curso
+
+### Resultado atual
+
+O sistema aceita normalmente.
+
+### Resultado esperado
+
+O sistema deveria impedir o cadastro e exibir mensagem:
+
+Data de término deve ser maior que a data de início
+
+### Severidade
+
+Alta
+
+Porque quebra lógica temporal do sistema.
+
+## Bug 4 — Número de vagas negativo
+
+### Passos para reproduzir
+
+1. Campo Número de vagas.
+2. Testando:-10 ou 0 ou 999999999
+
+### Resultado atual
+
+Sistema aceita qualquer valor.
+
+### Resultado esperado
+Validação como:
+
+mínimo: 1
+máximo: 500 (exemplo)
+
+### Severidade
+
+Média
+
+Porque afeta consistência dos dados.
+
 ## Uso de Inteligência Artificial
 
 Durante o desafio utilizei ferramentas de IA como apoio para:
